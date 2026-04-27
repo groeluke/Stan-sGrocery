@@ -28,41 +28,41 @@
         /// </summary>
         private void InitializeComponent()
         {
-            comboBox1 = new ComboBox();
-            listBox1 = new ListBox();
+            ComboBox = new ComboBox();
+            MainListBox = new ListBox();
             SuspendLayout();
             // 
-            // comboBox1
+            // ComboBox
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(12, 12);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(776, 33);
-            comboBox1.TabIndex = 0;
+            ComboBox.FormattingEnabled = true;
+            ComboBox.Location = new Point(12, 12);
+            ComboBox.Name = "ComboBox";
+            ComboBox.Size = new Size(776, 33);
+            ComboBox.TabIndex = 0;
             // 
-            // listBox1
+            // MainListBox
             // 
-            listBox1.FormattingEnabled = true;
-            listBox1.Location = new Point(12, 51);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(776, 229);
-            listBox1.TabIndex = 1;
+            MainListBox.FormattingEnabled = true;
+            MainListBox.Location = new Point(12, 51);
+            MainListBox.Name = "MainListBox";
+            MainListBox.Size = new Size(776, 229);
+            MainListBox.TabIndex = 1;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(listBox1);
-            Controls.Add(comboBox1);
+            Controls.Add(MainListBox);
+            Controls.Add(ComboBox);
             Name = "Form1";
-            Text = "Form1";
+            Text = "Stan's Grocery";
             ResumeLayout(false);
         }
 
         #endregion
 
-        private ComboBox comboBox1;
-        private ListBox listBox1;
+        private ComboBox ComboBox;
+        private ListBox MainListBox;
     }
 }
