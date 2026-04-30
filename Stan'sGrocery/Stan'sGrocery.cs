@@ -8,9 +8,12 @@ namespace Stan_sGrocery
 
             InitializeComponent();
             SearchButton.Enabled = false; // disable the search button until a search type is selected
-            string filePath = "..\\..\\..\\Grocery.txt"; // path to the grocery text file
-
+            SearchMenuItem.Click += SearchButton_Click; // link the search menu item to the search button click event handler
+            SearchC
         }
+
+        string[,] customerData = new string[0, 0]; // 2D array to display customer data
+        string filePath = @"C:\Users\lukeg\OneDrive\Desktop\School\4th Semester\github\Stan'sGrocery\Stan'sGrocery\Stan'sGrocery";
         //Custom Methods-------------------------------------------------------
         private void SplashForm()
         {

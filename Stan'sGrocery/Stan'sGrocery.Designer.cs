@@ -43,6 +43,7 @@
             searchToolStripMenuItem1 = new ToolStripMenuItem();
             exitToolStripMenuItem1 = new ToolStripMenuItem();
             ToolTip = new ToolTip(components);
+            searchToolStripMenuItem = new ToolStripMenuItem();
             TopMenuStrip.SuspendLayout();
             ContextMenuStrip.SuspendLayout();
             SuspendLayout();
@@ -107,14 +108,14 @@
             // SearchMenuItem
             // 
             SearchMenuItem.Name = "SearchMenuItem";
-            SearchMenuItem.Size = new Size(270, 34);
+            SearchMenuItem.Size = new Size(166, 34);
             SearchMenuItem.Text = "Search";
             SearchMenuItem.Click += SearchMenuItem_Click;
             // 
             // ExitMenuItem
             // 
             ExitMenuItem.Name = "ExitMenuItem";
-            ExitMenuItem.Size = new Size(270, 34);
+            ExitMenuItem.Size = new Size(166, 34);
             ExitMenuItem.Text = "Exit";
             ExitMenuItem.Click += ExitMenuItem_Click;
             // 
@@ -128,16 +129,16 @@
             // AboutMenuItem
             // 
             AboutMenuItem.Name = "AboutMenuItem";
-            AboutMenuItem.Size = new Size(270, 34);
+            AboutMenuItem.Size = new Size(164, 34);
             AboutMenuItem.Text = "About";
             AboutMenuItem.Click += AboutMenuItem_Click;
             // 
             // ContextMenuStrip
             // 
             ContextMenuStrip.ImageScalingSize = new Size(24, 24);
-            ContextMenuStrip.Items.AddRange(new ToolStripItem[] { searchToolStripMenuItem1, exitToolStripMenuItem1 });
+            ContextMenuStrip.Items.AddRange(new ToolStripItem[] { searchToolStripMenuItem1, exitToolStripMenuItem1, searchToolStripMenuItem });
             ContextMenuStrip.Name = "ContextMenuStrip";
-            ContextMenuStrip.Size = new Size(137, 68);
+            ContextMenuStrip.Size = new Size(137, 100);
             // 
             // searchToolStripMenuItem1
             // 
@@ -150,6 +151,12 @@
             exitToolStripMenuItem1.Name = "exitToolStripMenuItem1";
             exitToolStripMenuItem1.Size = new Size(136, 32);
             exitToolStripMenuItem1.Text = "Exit";
+            // 
+            // searchToolStripMenuItem
+            // 
+            searchToolStripMenuItem.Name = "searchToolStripMenuItem";
+            searchToolStripMenuItem.Size = new Size(136, 32);
+            searchToolStripMenuItem.Text = "Search";
             // 
             // StansGroceryForm
             // 
@@ -187,5 +194,6 @@
         private ToolStripMenuItem searchToolStripMenuItem1;
         private ToolStripMenuItem exitToolStripMenuItem1;
         private ToolTip ToolTip;
+        private ToolStripMenuItem searchToolStripMenuItem;
     }
 }
