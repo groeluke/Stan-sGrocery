@@ -19,11 +19,11 @@ namespace Stan_sGrocery
         void UpdateLabel()
         {
             AboutOkLabel.Text =
-                $"Graphics Example\n" +
-                $"ACME Inc.\n" +
-                $"Version 1.0.0\n" +
+                $"Stan's Grocery LLC.\n" +
+                $"ISU Inc.\n" +
+                $"Version 1.1.1\n" +
                 $"123Wabbit Woad\n" +
-                $"Your Mother's House";
+                $"You'r Mom House";
         }
 
         private void OkAboutButton_Click(object sender, EventArgs e)

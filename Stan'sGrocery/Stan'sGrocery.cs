@@ -7,13 +7,11 @@ namespace Stan_sGrocery
             SplashForm(); // show the splash form before initializing the main form
 
             InitializeComponent();
+            SearchButton.Enabled = false; // disable the search button until a search type is selected
+            string filePath = "..\\..\\..\\Grocery.txt"; // path to the grocery text file
+
         }
         //Custom Methods-------------------------------------------------------
-        void SetDefaults()
-        {
-
-        }
-
         private void SplashForm()
         {
             SplashForm splashForm = new SplashForm(); //instantitate the splash form
@@ -21,6 +19,11 @@ namespace Stan_sGrocery
             System.Threading.Thread.Sleep(1000);// pause the main thread for 1 seconds to allow the splash form to be visible
             splashForm.Close(); // close the splash form after 1 seconds
         }
+        void SetDefaults()
+        {
+
+        }
+
 
         //Event handler--------------------------------------------------------
 
