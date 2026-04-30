@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            ComboBox = new ComboBox();
+            SearchComboBox = new ComboBox();
             MainListBox = new ListBox();
             ExitButton = new Button();
             SearchButton = new Button();
             TopMenuStrip = new MenuStrip();
-            fileToolStripMenuItem = new ToolStripMenuItem();
-            helpToolStripMenuItem = new ToolStripMenuItem();
-            aboutToolStripMenuItem = new ToolStripMenuItem();
-            searchToolStripMenuItem = new ToolStripMenuItem();
-            exitToolStripMenuItem = new ToolStripMenuItem();
+            FileMenuItem = new ToolStripMenuItem();
+            SearchMenuItem = new ToolStripMenuItem();
+            ExitMenuItem = new ToolStripMenuItem();
+            HelpMenuItem = new ToolStripMenuItem();
+            AboutMenuItem = new ToolStripMenuItem();
             ContextMenuStrip = new ContextMenuStrip(components);
             searchToolStripMenuItem1 = new ToolStripMenuItem();
             exitToolStripMenuItem1 = new ToolStripMenuItem();
@@ -47,14 +47,15 @@
             ContextMenuStrip.SuspendLayout();
             SuspendLayout();
             // 
-            // ComboBox
+            // SearchComboBox
             // 
-            ComboBox.Font = new Font("Source Code Pro", 9F);
-            ComboBox.FormattingEnabled = true;
-            ComboBox.Location = new Point(12, 303);
-            ComboBox.Name = "ComboBox";
-            ComboBox.Size = new Size(472, 35);
-            ComboBox.TabIndex = 0;
+            SearchComboBox.Font = new Font("Source Code Pro", 9F);
+            SearchComboBox.FormattingEnabled = true;
+            SearchComboBox.Location = new Point(12, 303);
+            SearchComboBox.Name = "SearchComboBox";
+            SearchComboBox.Size = new Size(472, 35);
+            SearchComboBox.TabIndex = 0;
+            SearchComboBox.SelectedIndexChanged += SearchComboBox_SelectedIndexChanged;
             // 
             // MainListBox
             // 
@@ -64,6 +65,7 @@
             MainListBox.Name = "MainListBox";
             MainListBox.Size = new Size(776, 220);
             MainListBox.TabIndex = 1;
+            MainListBox.SelectedIndexChanged += MainListBox_SelectedIndexChanged;
             // 
             // ExitButton
             // 
@@ -73,6 +75,7 @@
             ExitButton.TabIndex = 2;
             ExitButton.Text = "&Exit";
             ExitButton.UseVisualStyleBackColor = true;
+            ExitButton.Click += ExitButton_Click;
             // 
             // SearchButton
             // 
@@ -82,48 +85,52 @@
             SearchButton.TabIndex = 3;
             SearchButton.Text = "&Search";
             SearchButton.UseVisualStyleBackColor = true;
+            SearchButton.Click += SearchButton_Click;
             // 
             // TopMenuStrip
             // 
             TopMenuStrip.ImageScalingSize = new Size(24, 24);
-            TopMenuStrip.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem, helpToolStripMenuItem });
+            TopMenuStrip.Items.AddRange(new ToolStripItem[] { FileMenuItem, HelpMenuItem });
             TopMenuStrip.Location = new Point(0, 0);
             TopMenuStrip.Name = "TopMenuStrip";
             TopMenuStrip.Size = new Size(800, 33);
             TopMenuStrip.TabIndex = 5;
             TopMenuStrip.Text = "menuStrip1";
             // 
-            // fileToolStripMenuItem
+            // FileMenuItem
             // 
-            fileToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { searchToolStripMenuItem, exitToolStripMenuItem });
-            fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            fileToolStripMenuItem.Size = new Size(54, 29);
-            fileToolStripMenuItem.Text = "File";
+            FileMenuItem.DropDownItems.AddRange(new ToolStripItem[] { SearchMenuItem, ExitMenuItem });
+            FileMenuItem.Name = "FileMenuItem";
+            FileMenuItem.Size = new Size(54, 29);
+            FileMenuItem.Text = "File";
             // 
-            // helpToolStripMenuItem
+            // SearchMenuItem
             // 
-            helpToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { aboutToolStripMenuItem });
-            helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            helpToolStripMenuItem.Size = new Size(65, 29);
-            helpToolStripMenuItem.Text = "Help";
+            SearchMenuItem.Name = "SearchMenuItem";
+            SearchMenuItem.Size = new Size(270, 34);
+            SearchMenuItem.Text = "Search";
+            SearchMenuItem.Click += SearchMenuItem_Click;
             // 
-            // aboutToolStripMenuItem
+            // ExitMenuItem
             // 
-            aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            aboutToolStripMenuItem.Size = new Size(270, 34);
-            aboutToolStripMenuItem.Text = "About";
+            ExitMenuItem.Name = "ExitMenuItem";
+            ExitMenuItem.Size = new Size(270, 34);
+            ExitMenuItem.Text = "Exit";
+            ExitMenuItem.Click += ExitMenuItem_Click;
             // 
-            // searchToolStripMenuItem
+            // HelpMenuItem
             // 
-            searchToolStripMenuItem.Name = "searchToolStripMenuItem";
-            searchToolStripMenuItem.Size = new Size(270, 34);
-            searchToolStripMenuItem.Text = "Search";
+            HelpMenuItem.DropDownItems.AddRange(new ToolStripItem[] { AboutMenuItem });
+            HelpMenuItem.Name = "HelpMenuItem";
+            HelpMenuItem.Size = new Size(65, 29);
+            HelpMenuItem.Text = "Help";
             // 
-            // exitToolStripMenuItem
+            // AboutMenuItem
             // 
-            exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            exitToolStripMenuItem.Size = new Size(270, 34);
-            exitToolStripMenuItem.Text = "Exit";
+            AboutMenuItem.Name = "AboutMenuItem";
+            AboutMenuItem.Size = new Size(270, 34);
+            AboutMenuItem.Text = "About";
+            AboutMenuItem.Click += AboutMenuItem_Click;
             // 
             // ContextMenuStrip
             // 
@@ -152,7 +159,7 @@
             Controls.Add(SearchButton);
             Controls.Add(ExitButton);
             Controls.Add(MainListBox);
-            Controls.Add(ComboBox);
+            Controls.Add(SearchComboBox);
             Controls.Add(TopMenuStrip);
             MainMenuStrip = TopMenuStrip;
             Name = "StansGroceryForm";
@@ -166,16 +173,16 @@
 
         #endregion
 
-        private ComboBox ComboBox;
+        private ComboBox SearchComboBox;
         private ListBox MainListBox;
         private Button ExitButton;
         private Button SearchButton;
         private MenuStrip TopMenuStrip;
-        private ToolStripMenuItem fileToolStripMenuItem;
-        private ToolStripMenuItem searchToolStripMenuItem;
-        private ToolStripMenuItem exitToolStripMenuItem;
-        private ToolStripMenuItem helpToolStripMenuItem;
-        private ToolStripMenuItem aboutToolStripMenuItem;
+        private ToolStripMenuItem FileMenuItem;
+        private ToolStripMenuItem SearchMenuItem;
+        private ToolStripMenuItem ExitMenuItem;
+        private ToolStripMenuItem HelpMenuItem;
+        private ToolStripMenuItem AboutMenuItem;
         private ContextMenuStrip ContextMenuStrip;
         private ToolStripMenuItem searchToolStripMenuItem1;
         private ToolStripMenuItem exitToolStripMenuItem1;

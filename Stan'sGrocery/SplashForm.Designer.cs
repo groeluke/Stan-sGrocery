@@ -28,16 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SplashForm));
             SuspendLayout();
             // 
             // SplashForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            BackColor = Color.Fuchsia;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Center;
+            ClientSize = new Size(902, 797);
+            DoubleBuffered = true;
             FormBorderStyle = FormBorderStyle.None;
             Name = "SplashForm";
             Text = "SplashForm";
+            TransparencyKey = Color.Fuchsia;
             ResumeLayout(false);
         }
 

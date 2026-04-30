@@ -13,6 +13,22 @@ namespace Stan_sGrocery
         public AboutForm()
         {
             InitializeComponent();
+            UpdateLabel();
+        }
+
+        void UpdateLabel()
+        {
+            AboutOkLabel.Text =
+                $"Graphics Example\n" +
+                $"ACME Inc.\n" +
+                $"Version 1.0.0\n" +
+                $"123Wabbit Woad\n" +
+                $"Your Mother's House";
+        }
+
+        private void OkAboutButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
