@@ -8,7 +8,7 @@ namespace Stan_sGrocery
             InitializeComponent();
             SetDefaults(); // set the defaults to load when the form starts
 
-            string filePath = "..\\...\\..\\Grocery.txt";
+            string filePath = "..\\..\\..\\grocery.txt";
             FileToArray(filePath); // load the data from the file into the 2D array
             DisplayData(); // display the data in the list box
 
@@ -21,7 +21,7 @@ namespace Stan_sGrocery
         }
 
         string[,] customerData = new string[0, 0]; // 2D array to display customer data
-        string filePath = "..\\...\\..\\Grocery.txt"; // file path to the grocery data file
+        string filePath = "..\\..\\..\\grocery.txt"; // file path to the grocery data file
         //Custom Methods-------------------------------------------------------
 
         private void SplashForm()
