@@ -47,6 +47,7 @@
             FilterByAisleRadioButton = new RadioButton();
             FilterByCategoryRadioButton = new RadioButton();
             FilterGroupBox = new GroupBox();
+            SearchTextBox = new TextBox();
             TopMenuStrip.SuspendLayout();
             ContextMenuStrip.SuspendLayout();
             FilterGroupBox.SuspendLayout();
@@ -58,7 +59,7 @@
             SearchComboBox.FormattingEnabled = true;
             SearchComboBox.Location = new Point(12, 285);
             SearchComboBox.Name = "SearchComboBox";
-            SearchComboBox.Size = new Size(776, 35);
+            SearchComboBox.Size = new Size(472, 35);
             SearchComboBox.TabIndex = 0;
             SearchComboBox.SelectedIndexChanged += SearchComboBox_SelectedIndexChanged;
             // 
@@ -197,11 +198,19 @@
             FilterGroupBox.TabStop = false;
             FilterGroupBox.Text = "Filter Selections";
             // 
+            // SearchTextBox
+            // 
+            SearchTextBox.Location = new Point(490, 285);
+            SearchTextBox.Name = "SearchTextBox";
+            SearchTextBox.Size = new Size(298, 31);
+            SearchTextBox.TabIndex = 9;
+            // 
             // StansGroceryForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 421);
+            Controls.Add(SearchTextBox);
             Controls.Add(FilterGroupBox);
             Controls.Add(SearchButton);
             Controls.Add(ExitButton);
@@ -240,5 +249,6 @@
         private RadioButton FilterByAisleRadioButton;
         private RadioButton FilterByCategoryRadioButton;
         private GroupBox FilterGroupBox;
+        private TextBox SearchTextBox;
     }
 }
