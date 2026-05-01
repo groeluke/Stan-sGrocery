@@ -7,12 +7,21 @@ namespace Stan_sGrocery
             SplashForm(); // show the splash form when the main form is instantiated
             InitializeComponent();
             SetDefaults(); // set the defaults to load when the form starts
+
+            string filePath = "..\\...\\..\\Grocery.txt";
+            FileToArray(filePath); // load the data from the file into the 2D array
+            DisplayData(); // display the data in the list box
+
+
             SearchButton.Enabled = false; // disable the search button until a search type is selected
             SearchMenuItem.Click += SearchButton_Click; // link the search menu item to the search button click event handler
-            string filePath = "..\\...\\..\\Grocery.txt";
+            ExitMenuItem.Click += ExitButton_Click; // link the exit menu item to the exit button click event handler
+
+
         }
 
         string[,] customerData = new string[0, 0]; // 2D array to display customer data
+        string filePath = "..\\...\\..\\Grocery.txt"; // file path to the grocery data file
         //Custom Methods-------------------------------------------------------
 
         private void SplashForm()
@@ -125,8 +134,36 @@ namespace Stan_sGrocery
                 }
             }
         }
-      
 
+        void LoadFilterComboBox()
+        {
+            int column = 1;
+            SearchComboBox.Items.Clear();
+
+            switch (true)
+            {
+                case bool when FilterByAisleRadioButton.Checked:
+                    column = 1;
+                    break;
+                case bool when FilterByCategoryRadioButton.Checked:
+                    column = 2;
+                    break;
+                    //default:
+            }
+
+            for (int row = 0; (row < this.customerData.GetUpperBound(1)); row++)
+            {
+                if (this.customerData[column, row] != null && SearchComboBox.Items.Contains(this.customerData[column, row]) != true)
+                {
+
+                    SearchComboBox.Items.Add(this.customerData[column, row]); //add city 
+                }
+            }
+            SearchComboBox.Items.Add("~Select~");
+            SearchComboBox.Sorted = true;
+            SearchComboBox.SelectedIndex = 0;
+
+        }
 
         //Event handler--------------------------------------------------------
 
@@ -136,12 +173,12 @@ namespace Stan_sGrocery
         }
         private void SearchComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            DisplayData();
         }
 
         private void SearchMenuItem_Click(object sender, EventArgs e)
         {
-
+            SearchButton_Click(sender, e);
         }
 
         private void ExitMenuItem_Click(object sender, EventArgs e)
@@ -158,7 +195,9 @@ namespace Stan_sGrocery
 
         private void SearchButton_Click(object sender, EventArgs e)
         {
-
+            SearchComboBox.SelectedIndex = 0;
+            DisplayData();
+            SearchTextBox.Text = "";
         }
 
         private void ExitButton_Click(object sender, EventArgs e)
@@ -168,12 +207,12 @@ namespace Stan_sGrocery
 
         private void FilterByAisleRadioButton_CheckedChanged(object sender, EventArgs e)
         {
-
+            LoadFilterComboBox();
         }
 
         private void FilterByCategoryRadioButton_CheckedChanged(object sender, EventArgs e)
         {
-
+            LoadFilterComboBox();
         }
     }
 }
