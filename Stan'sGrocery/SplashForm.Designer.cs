@@ -42,7 +42,6 @@
             DoubleBuffered = true;
             FormBorderStyle = FormBorderStyle.None;
             Name = "SplashForm";
-            Text = "SplashForm";
             TransparencyKey = Color.Fuchsia;
             ResumeLayout(false);
         }

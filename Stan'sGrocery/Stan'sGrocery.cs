@@ -4,16 +4,14 @@ namespace Stan_sGrocery
     {
         public StansGroceryForm()
         {
-            SplashForm(); // show the splash form before initializing the main form
-
+            SplashForm(); // show the splash form when the main form is instantiated
             InitializeComponent();
             SearchButton.Enabled = false; // disable the search button until a search type is selected
             SearchMenuItem.Click += SearchButton_Click; // link the search menu item to the search button click event handler
-            SearchC
+            string filePath = "..\\...\\..\\Grocery.txt";
         }
 
         string[,] customerData = new string[0, 0]; // 2D array to display customer data
-        string filePath = @"C:\Users\lukeg\OneDrive\Desktop\School\4th Semester\github\Stan'sGrocery\Stan'sGrocery\Stan'sGrocery";
         //Custom Methods-------------------------------------------------------
         private void SplashForm()
         {
@@ -66,5 +64,14 @@ namespace Stan_sGrocery
             this.Close();
         }
 
+        private void FilterByAisleRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FilterByCategoryRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

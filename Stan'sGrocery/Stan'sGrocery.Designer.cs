@@ -42,19 +42,23 @@
             ContextMenuStrip = new ContextMenuStrip(components);
             searchToolStripMenuItem1 = new ToolStripMenuItem();
             exitToolStripMenuItem1 = new ToolStripMenuItem();
-            ToolTip = new ToolTip(components);
             searchToolStripMenuItem = new ToolStripMenuItem();
+            ToolTip = new ToolTip(components);
+            FilterByAisleRadioButton = new RadioButton();
+            FilterByCategoryRadioButton = new RadioButton();
+            FilterGroupBox = new GroupBox();
             TopMenuStrip.SuspendLayout();
             ContextMenuStrip.SuspendLayout();
+            FilterGroupBox.SuspendLayout();
             SuspendLayout();
             // 
             // SearchComboBox
             // 
             SearchComboBox.Font = new Font("Source Code Pro", 9F);
             SearchComboBox.FormattingEnabled = true;
-            SearchComboBox.Location = new Point(12, 303);
+            SearchComboBox.Location = new Point(12, 285);
             SearchComboBox.Name = "SearchComboBox";
-            SearchComboBox.Size = new Size(472, 35);
+            SearchComboBox.Size = new Size(776, 35);
             SearchComboBox.TabIndex = 0;
             SearchComboBox.SelectedIndexChanged += SearchComboBox_SelectedIndexChanged;
             // 
@@ -70,7 +74,7 @@
             // 
             // ExitButton
             // 
-            ExitButton.Location = new Point(642, 285);
+            ExitButton.Location = new Point(642, 339);
             ExitButton.Name = "ExitButton";
             ExitButton.Size = new Size(146, 70);
             ExitButton.TabIndex = 2;
@@ -80,7 +84,7 @@
             // 
             // SearchButton
             // 
-            SearchButton.Location = new Point(490, 285);
+            SearchButton.Location = new Point(490, 339);
             SearchButton.Name = "SearchButton";
             SearchButton.Size = new Size(146, 70);
             SearchButton.TabIndex = 3;
@@ -158,11 +162,47 @@
             searchToolStripMenuItem.Size = new Size(136, 32);
             searchToolStripMenuItem.Text = "Search";
             // 
+            // FilterByAisleRadioButton
+            // 
+            FilterByAisleRadioButton.AutoSize = true;
+            FilterByAisleRadioButton.Location = new Point(6, 30);
+            FilterByAisleRadioButton.Name = "FilterByAisleRadioButton";
+            FilterByAisleRadioButton.Size = new Size(141, 29);
+            FilterByAisleRadioButton.TabIndex = 6;
+            FilterByAisleRadioButton.TabStop = true;
+            FilterByAisleRadioButton.Text = "Filter By Aisle";
+            FilterByAisleRadioButton.UseVisualStyleBackColor = true;
+            FilterByAisleRadioButton.CheckedChanged += FilterByAisleRadioButton_CheckedChanged;
+            // 
+            // FilterByCategoryRadioButton
+            // 
+            FilterByCategoryRadioButton.AutoSize = true;
+            FilterByCategoryRadioButton.Location = new Point(261, 30);
+            FilterByCategoryRadioButton.Name = "FilterByCategoryRadioButton";
+            FilterByCategoryRadioButton.Size = new Size(176, 29);
+            FilterByCategoryRadioButton.TabIndex = 7;
+            FilterByCategoryRadioButton.TabStop = true;
+            FilterByCategoryRadioButton.Text = "Filter By Category";
+            FilterByCategoryRadioButton.UseVisualStyleBackColor = true;
+            FilterByCategoryRadioButton.CheckedChanged += FilterByCategoryRadioButton_CheckedChanged;
+            // 
+            // FilterGroupBox
+            // 
+            FilterGroupBox.Controls.Add(FilterByCategoryRadioButton);
+            FilterGroupBox.Controls.Add(FilterByAisleRadioButton);
+            FilterGroupBox.Location = new Point(12, 326);
+            FilterGroupBox.Name = "FilterGroupBox";
+            FilterGroupBox.Size = new Size(472, 93);
+            FilterGroupBox.TabIndex = 8;
+            FilterGroupBox.TabStop = false;
+            FilterGroupBox.Text = "Filter Selections";
+            // 
             // StansGroceryForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 367);
+            ClientSize = new Size(800, 421);
+            Controls.Add(FilterGroupBox);
             Controls.Add(SearchButton);
             Controls.Add(ExitButton);
             Controls.Add(MainListBox);
@@ -174,6 +214,8 @@
             TopMenuStrip.ResumeLayout(false);
             TopMenuStrip.PerformLayout();
             ContextMenuStrip.ResumeLayout(false);
+            FilterGroupBox.ResumeLayout(false);
+            FilterGroupBox.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -195,5 +237,8 @@
         private ToolStripMenuItem exitToolStripMenuItem1;
         private ToolTip ToolTip;
         private ToolStripMenuItem searchToolStripMenuItem;
+        private RadioButton FilterByAisleRadioButton;
+        private RadioButton FilterByCategoryRadioButton;
+        private GroupBox FilterGroupBox;
     }
 }
