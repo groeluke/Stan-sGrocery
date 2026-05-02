@@ -18,7 +18,7 @@ namespace Stan_sGrocery
             SetDefaults(); 
             // set the defaults to load when the form starts
 
-            string filePath = "..\\..\\..\\grocery.txt";
+            string filePath = "..\\..\\..\\Grocery.txt";
             FileToArray(filePath); 
             // load the data from the file into the 2D array
             DisplayData(); 
@@ -37,7 +37,7 @@ namespace Stan_sGrocery
 
         string[,] customerData = new string[0, 0]; 
         // 2D array to display customer data
-        string filePath = "..\\..\\..\\grocery.txt";
+        string filePath = "..\\..\\..\\Grocery.txt";
         // file path to the grocery data file
         //Custom Methods-------------------------------------------------------
 
