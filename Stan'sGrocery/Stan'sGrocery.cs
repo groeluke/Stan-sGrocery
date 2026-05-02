@@ -46,6 +46,7 @@ namespace Stan_sGrocery
             SplashForm splashForm = new SplashForm();
             splashForm.Show();
             System.Threading.Thread.Sleep(1000); // keep the splash form visible for 1 second
+            splashForm.Close();
         }
 
         private void SetDefaults()
