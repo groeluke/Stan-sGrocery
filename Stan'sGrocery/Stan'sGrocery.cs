@@ -1,3 +1,11 @@
+/*Luke Groesbeck
+Spring 2026
+RCET 2265
+Project Stan's Grocery
+Computer Fundamentals and Introduction to Programming
+https://github.com/groeluke/Stan-sGrocery.git
+*/
+
 namespace Stan_sGrocery
 {
     public partial class StansGroceryForm : System.Windows.Forms.Form
