@@ -61,6 +61,7 @@
             SearchComboBox.Name = "SearchComboBox";
             SearchComboBox.Size = new Size(472, 35);
             SearchComboBox.TabIndex = 0;
+            ToolTip.SetToolTip(SearchComboBox, "Look through the selections");
             SearchComboBox.SelectedIndexChanged += SearchComboBox_SelectedIndexChanged;
             // 
             // MainListBox
@@ -71,7 +72,6 @@
             MainListBox.Name = "MainListBox";
             MainListBox.Size = new Size(776, 220);
             MainListBox.TabIndex = 1;
-            MainListBox.SelectedIndexChanged += MainListBox_SelectedIndexChanged;
             // 
             // ExitButton
             // 
@@ -80,6 +80,7 @@
             ExitButton.Size = new Size(146, 70);
             ExitButton.TabIndex = 2;
             ExitButton.Text = "&Exit";
+            ToolTip.SetToolTip(ExitButton, "Exit the form");
             ExitButton.UseVisualStyleBackColor = true;
             ExitButton.Click += ExitButton_Click;
             // 
@@ -90,6 +91,7 @@
             SearchButton.Size = new Size(146, 70);
             SearchButton.TabIndex = 3;
             SearchButton.Text = "&Search";
+            ToolTip.SetToolTip(SearchButton, "Search for selected items");
             SearchButton.UseVisualStyleBackColor = true;
             SearchButton.Click += SearchButton_Click;
             // 
@@ -109,19 +111,22 @@
             FileMenuItem.Name = "FileMenuItem";
             FileMenuItem.Size = new Size(54, 29);
             FileMenuItem.Text = "File";
+            FileMenuItem.ToolTipText = "Search and Exit";
             // 
             // SearchMenuItem
             // 
             SearchMenuItem.Name = "SearchMenuItem";
-            SearchMenuItem.Size = new Size(166, 34);
+            SearchMenuItem.Size = new Size(270, 34);
             SearchMenuItem.Text = "Search";
+            SearchMenuItem.ToolTipText = "Search";
             SearchMenuItem.Click += SearchMenuItem_Click;
             // 
             // ExitMenuItem
             // 
             ExitMenuItem.Name = "ExitMenuItem";
-            ExitMenuItem.Size = new Size(166, 34);
+            ExitMenuItem.Size = new Size(270, 34);
             ExitMenuItem.Text = "Exit";
+            ExitMenuItem.ToolTipText = "Exit the form";
             ExitMenuItem.Click += ExitMenuItem_Click;
             // 
             // HelpMenuItem
@@ -130,12 +135,14 @@
             HelpMenuItem.Name = "HelpMenuItem";
             HelpMenuItem.Size = new Size(65, 29);
             HelpMenuItem.Text = "Help";
+            HelpMenuItem.ToolTipText = "About";
             // 
             // AboutMenuItem
             // 
             AboutMenuItem.Name = "AboutMenuItem";
-            AboutMenuItem.Size = new Size(164, 34);
+            AboutMenuItem.Size = new Size(270, 34);
             AboutMenuItem.Text = "About";
+            AboutMenuItem.ToolTipText = "About the page";
             AboutMenuItem.Click += AboutMenuItem_Click;
             // 
             // ContextMenuStrip
@@ -172,6 +179,7 @@
             FilterByAisleRadioButton.TabIndex = 6;
             FilterByAisleRadioButton.TabStop = true;
             FilterByAisleRadioButton.Text = "Filter By Aisle";
+            ToolTip.SetToolTip(FilterByAisleRadioButton, "Filter by the aisles");
             FilterByAisleRadioButton.UseVisualStyleBackColor = true;
             FilterByAisleRadioButton.CheckedChanged += FilterByAisleRadioButton_CheckedChanged;
             // 
@@ -184,6 +192,7 @@
             FilterByCategoryRadioButton.TabIndex = 7;
             FilterByCategoryRadioButton.TabStop = true;
             FilterByCategoryRadioButton.Text = "Filter By Category";
+            ToolTip.SetToolTip(FilterByCategoryRadioButton, "Filter by the category of food");
             FilterByCategoryRadioButton.UseVisualStyleBackColor = true;
             FilterByCategoryRadioButton.CheckedChanged += FilterByCategoryRadioButton_CheckedChanged;
             // 
@@ -204,6 +213,7 @@
             SearchTextBox.Name = "SearchTextBox";
             SearchTextBox.Size = new Size(298, 31);
             SearchTextBox.TabIndex = 9;
+            ToolTip.SetToolTip(SearchTextBox, "enter here for what you are looking for");
             // 
             // StansGroceryForm
             // 

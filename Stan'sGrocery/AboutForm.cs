@@ -22,6 +22,7 @@ namespace Stan_sGrocery
                 $"Stan's Grocery LLC.\n" +
                 $"ISU Inc.\n" +
                 $"Version 1.1.1\n" +
+                $"The best food sold here!!\n" +
                 $"123Wabbit Woad\n" +
                 $"You'r Mom House";
         }
