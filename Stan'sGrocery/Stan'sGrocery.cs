@@ -39,21 +39,15 @@ namespace Stan_sGrocery
         // 2D array to display customer data
         string filePath = "..\\..\\..\\Grocery.txt";
         // file path to the grocery data file
-        //Custom Methods-------------------------------------------------------
 
-        private void SplashForm()
-        {
-            SplashForm splashForm = new SplashForm();
-            splashForm.Show();
-            System.Threading.Thread.Sleep(1000); // keep the splash form visible for 1 second
-            splashForm.Close();
-        }
+        //Custom Methods-------------------------------------------------------
 
         private void SetDefaults()
         {
             FilterByAisleRadioButton.Checked = true; 
             // set the default filter to "Filter by Aisle"
         }
+
 
         int CountOfLinesIn(string filePath)
         {
@@ -148,7 +142,7 @@ namespace Stan_sGrocery
                 for (int column = 0; column < data.GetLength(0); column++)
                 {
                     if (data[column, row] == null && (data[filterColumn, row] 
-                    != SearchComboBox.SelectedItem.ToString() 
+                    == SearchComboBox.SelectedItem.ToString() 
                     || SearchComboBox.SelectedIndex == 0))
                     {
                         formattedRow = $"{data[0, row],-25} {data[1, row],-5} " +
@@ -197,6 +191,13 @@ namespace Stan_sGrocery
             SearchComboBox.Sorted = true;
             SearchComboBox.SelectedIndex = 0;
 
+        }
+        private void SplashForm()
+        {
+            SplashForm splashForm = new SplashForm();
+            splashForm.Show();
+            System.Threading.Thread.Sleep(1000); // keep the splash form visible for 1 second
+            splashForm.Close();
         }
 
         //Event handler--------------------------------------------------------
